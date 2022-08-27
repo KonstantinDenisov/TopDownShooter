@@ -5,7 +5,7 @@ namespace TDS.Game.Player
     public class PlayerAttack : MonoBehaviour
     {
         #region Variables
-
+        [SerializeField] private PlayerAnimation _playerAnimation;
         [SerializeField] private GameObject _bulletPrefab;
         [SerializeField] private Transform _bulletSpawnPointTransform;
         [SerializeField] private float _fireDelay;
@@ -44,6 +44,7 @@ namespace TDS.Game.Player
 
         private void Attack()
         {
+            _playerAnimation.PlayShoot();
             Instantiate(_bulletPrefab, _bulletSpawnPointTransform.position, _cachedTransform.rotation);
             _delayTimer = _fireDelay;
         }

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 42172738}
   - component: {fileID: 42172739}
   - component: {fileID: 42172740}
+  - component: {fileID: 42172741}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 20
+  _playerAnimation: {fileID: 42172741}
 --- !u!114 &42172740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,9 +185,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b781f19042f4da5b22c268618f0626f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerAnimation: {fileID: 42172741}
   _bulletPrefab: {fileID: 3307840604466939773, guid: bf627b13513eb9d42a4f0e408e6244a5, type: 3}
   _bulletSpawnPointTransform: {fileID: 368017955}
   _fireDelay: 0.4
+--- !u!114 &42172741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42172737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c93003a6274e5ebe57ef28ca6ce198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 954396717}
 --- !u!1 &356987757
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +738,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.048064, y: 1}
+    m_SensorSize: {x: 0.6728972, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
