@@ -602,6 +602,7 @@ GameObject:
   - component: {fileID: 954396716}
   - component: {fileID: 954396715}
   - component: {fileID: 954396717}
+  - component: {fileID: 954396718}
   m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
@@ -696,6 +697,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &954396718
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954396714}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.27643532, y: 1.2188288}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 3.34, y: 5.79}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9734689, y: 1.1996439}
+  m_EdgeRadius: 0
 --- !u!1 &1159433767
 GameObject:
   m_ObjectHideFlags: 3
@@ -810,6 +837,7 @@ GameObject:
   - component: {fileID: 1418132839}
   - component: {fileID: 1418132841}
   - component: {fileID: 1418132840}
+  - component: {fileID: 1418132842}
   m_Layer: 9
   m_Name: Man
   m_TagString: Untagged
@@ -863,6 +891,32 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 719699604289247601, guid: 77cdd3b0c50594e4c85a93128e75dc7e, type: 3}
   _bulletSpawnPointTransform: {fileID: 1712708794}
   _follow: {fileID: 954396716}
+--- !u!61 &1418132842
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418132838}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.21989179, y: -1.03035}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4397836, y: 1.8293061}
+  m_EdgeRadius: 0
 --- !u!1 &1507143451
 GameObject:
   m_ObjectHideFlags: 0

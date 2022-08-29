@@ -12,6 +12,7 @@ namespace TDS.Game.Man
         [SerializeField] private Transform _bulletSpawnPointTransform;
         private Transform _cachedTransform;
         [SerializeField] private Transform _follow;
+        private Camera _mainCamera;
 
         #endregion
 
@@ -21,6 +22,7 @@ namespace TDS.Game.Man
         private void Awake()
         {
             _cachedTransform = transform;
+            _mainCamera = Camera.main;
         }
 
         private void Start()
@@ -46,6 +48,9 @@ namespace TDS.Game.Man
         
         private void Rotate()
         {
+            Vector3 worldPoint = _mainCamera.ScreenToWorldPoint(_cachedTransform.position);
+            worldPoint.z = 0f;
+            
             Vector3 direction = _follow.position - _cachedTransform.position;
             _cachedTransform.up = direction;
         }
