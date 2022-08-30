@@ -13,6 +13,8 @@ namespace TDS.Game.Man
         private Transform _cachedTransform;
         [SerializeField] private Transform _follow;
         private Camera _mainCamera;
+        private bool _isDeath;
+        
 
         #endregion
 
@@ -32,14 +34,26 @@ namespace TDS.Game.Man
 
         private void Update()
         {
+            if (_isDeath)
+            {
+                return;
+            }
             Rotate();
         }
 
         private void OnCollisionEnter2D(Collision2D col)
         {
+            IEnumerator fireRoutine = FireRoutine();
             if (col.gameObject.CompareTag("PlayerBullet"))
             {
                 _manAnimation.PlayDeath(true);
+                _isDeath = true;
+                if (fireRoutine == null)
+                {
+                    return;
+                }
+                StopCoroutine(fireRoutine);
+                fireRoutine = null;
             }
         }
 
