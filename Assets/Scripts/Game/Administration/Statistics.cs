@@ -35,6 +35,12 @@ namespace TDS.Game.Administration
             OnHpChanged?.Invoke(HPCount);
         }
 
+        public void IncrementHp()
+        {
+            HPCount++;
+            OnHpChanged?.Invoke(HPCount);
+        }
+
         #endregion
     }
 }

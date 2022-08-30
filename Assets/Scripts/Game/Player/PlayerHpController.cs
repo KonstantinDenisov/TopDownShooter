@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using TDS.Game.Administration;
 using UnityEngine;
 
@@ -38,7 +39,18 @@ namespace TDS.Game.Player
             if (Statistics.Instance.HPCount == 0)
             {
                 _playerAnimation.PlayDeath(true);
+                StartCoroutine(ReloadSceneRoutine());
             }
+            else
+            {
+                return;
+            }
+        }
+        
+        private IEnumerator ReloadSceneRoutine()
+        {
+            yield return new WaitForSeconds(4);
+            SceneLoader.Instance.ReloadScene();
         }
 
         #endregion
