@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TDS.Game.Man
 {
-    public class ManAttack : MonoBehaviour
+    public class ManController : MonoBehaviour
     {
         #region Variables
         [SerializeField] private ManAnimation _manAnimation;
@@ -35,6 +35,14 @@ namespace TDS.Game.Man
             Rotate();
         }
 
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            if (col.gameObject.CompareTag("PlayerBullet"))
+            {
+                _manAnimation.PlayDeath(true);
+            }
+        }
+
         #endregion
 
 
@@ -48,14 +56,12 @@ namespace TDS.Game.Man
         
         private void Rotate()
         {
-            Vector3 worldPoint = _mainCamera.ScreenToWorldPoint(_cachedTransform.position);
+            Vector3 worldPoint = _mainCamera.ScreenToWorldPoint(_follow.position);
             worldPoint.z = 0f;
             
             Vector3 direction = _follow.position - _cachedTransform.position;
             _cachedTransform.up = direction;
         }
-
-       
         
         private IEnumerator FireRoutine()
         {

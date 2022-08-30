@@ -15,5 +15,10 @@ namespace TDS.Game.Player
         {
             _animator.SetFloat("Speed", speed);
         }
+
+        public void PlayDeath(bool isDeath)
+        {
+            _animator.SetBool("Death", isDeath);
+        }
     }
 }
