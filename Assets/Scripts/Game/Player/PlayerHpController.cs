@@ -15,11 +15,6 @@ namespace TDS.Game.Player
         
         #region Unity Life Cycle
 
-        private void Awake()
-        {
-            throw new NotImplementedException();
-        }
-
         private void OnCollisionEnter2D(Collision2D col)
         {
             if (col.gameObject.CompareTag("PlayerBullet"))
