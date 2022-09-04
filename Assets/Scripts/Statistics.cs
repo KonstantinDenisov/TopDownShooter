@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TDS.Game.Administration
+namespace TDS
 {
     public class Statistics : SingletonMonoBehaviour<Statistics>
     {

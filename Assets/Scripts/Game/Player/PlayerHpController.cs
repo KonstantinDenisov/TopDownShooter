@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using TDS.Game.Administration;
 using UnityEngine;
 
 namespace TDS.Game.Player
@@ -33,7 +32,7 @@ namespace TDS.Game.Player
         {
             if (Statistics.Instance.HPCount == 0)
             {
-                _playerAnimation.PlayDeath(true);
+                _playerAnimation.PlayDeath();
                 StartCoroutine(ReloadSceneRoutine());
             }
             else

@@ -1,6 +1,6 @@
-﻿namespace TDS.Game.Administration
+﻿namespace TDS
 {
-    public class Tags
+    public static class Tags
     {
         public const string EnemyBullet = "EnemyBullet";
         public const string PlayerBullet = "PlayerBullet";

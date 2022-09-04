@@ -1,6 +1,6 @@
 ﻿using UnityEngine.SceneManagement;
 
-namespace TDS.Game.Administration
+namespace TDS
 {
     public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
     {

@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace TDS.Game.Player
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMovement : MonoBehaviour
     {
         #region Variables
@@ -10,6 +11,7 @@ namespace TDS.Game.Player
         [SerializeField] private PlayerAnimation _playerAnimation;
         private Transform _cachedTransform;
         private Camera _mainCamera;
+        private Rigidbody2D _rb;
 
         #endregion
 
@@ -19,6 +21,7 @@ namespace TDS.Game.Player
         {
             _cachedTransform = transform;
             _mainCamera = Camera.main;
+            _rb = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
@@ -37,8 +40,8 @@ namespace TDS.Game.Player
             float vertical = Input.GetAxis("Vertical");
             
             Vector2 direction = new Vector2(horizontal, vertical);
-            Vector3 moveDelta = direction * (_speed * Time.deltaTime);
-            _cachedTransform.position += moveDelta;
+            Vector3 moveDelta = direction * _speed;
+            _rb.velocity = moveDelta;
             
             _playerAnimation.SetSpeed(direction.magnitude);
         }

@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 
-namespace TDS.Game.Man
+namespace TDS.Game.Enemy
 {
-    public class ManAnimation : MonoBehaviour
+    public class EnemyAnimation : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
 
         public void PlayShoot()
         {
-            _animator.SetTrigger("ManShoot");
+            _animator.SetTrigger("EnemyShoot");
         }
 
         public void SetSpeed(float speed)
         {
-            _animator.SetFloat("ManSpeed", speed);
+            _animator.SetFloat("EnemySpeed", speed);
         }
 
         public void PlayDeath()

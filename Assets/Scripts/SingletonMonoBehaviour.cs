@@ -1,7 +1,7 @@
-﻿namespace TDS.Game.Administration
-{
-    using UnityEngine;
+﻿using UnityEngine;
 
+namespace TDS
+{
     public class SingletonMonoBehaviour<T> : MonoBehaviour
     {
         #region Public Fields

@@ -46,7 +46,7 @@ namespace TDS.Game.Man
             IEnumerator fireRoutine = FireRoutine();
             if (col.gameObject.CompareTag("PlayerBullet"))
             {
-                _manAnimation.PlayDeath(true);
+                _manAnimation.PlayDeath();
                 _isDeath = true;
                 if (fireRoutine == null)
                 {
