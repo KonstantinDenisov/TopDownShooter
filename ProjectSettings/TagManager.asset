@@ -18,9 +18,9 @@ TagManager:
   - Player
   - Man
   - PickUp
-  - 
-  - 
-  - 
+  - Enemy
+  - EnemyAgro
+  - EnemyAttack
   - 
   - 
   - 
