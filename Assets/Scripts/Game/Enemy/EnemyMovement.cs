@@ -10,6 +10,7 @@ namespace TDS.Game.Enemy
 
         [SerializeField] private float _speed = 4;
         [SerializeField] private Transform _target;
+        [SerializeField] private EnemyMeleeAnimation _enemyMeleeAnimation;
 
         private Rigidbody2D _rb;
         private Transform _cachedTransform;
@@ -63,6 +64,7 @@ namespace TDS.Game.Enemy
         {
             Vector3 direction = (_target.position - _cachedTransform.position).normalized;
             SetVelocity(direction * _speed);
+            _enemyMeleeAnimation.SetSpeed(_speed);
         }
 
         private void RotateToTarget()
