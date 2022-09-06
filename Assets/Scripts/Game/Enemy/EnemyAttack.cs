@@ -1,4 +1,5 @@
-﻿using TDS.Game.Player;
+﻿using System;
+using TDS.Game.Player;
 using UnityEngine;
 
 namespace TDS.Game.Enemy
@@ -10,8 +11,9 @@ namespace TDS.Game.Enemy
         [SerializeField] private int _damage = 2;
         [SerializeField] private float _attackDelay;
         [SerializeField] private Transform _attackPoint;
-        [SerializeField] private float _radius;
         [SerializeField] private LayerMask _layerMask;
+        [SerializeField] private float _radius;
+        private float _radiusGizmos;
 
         private float _delayTimer;
 
@@ -19,6 +21,18 @@ namespace TDS.Game.Enemy
 
 
         #region Unity Lifecycle
+
+        private void Start()
+        {
+            _radiusGizmos = _radius;
+            
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, _radiusGizmos);
+        }
 
         private void Update()
         {

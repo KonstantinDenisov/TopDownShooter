@@ -5,6 +5,13 @@ namespace TDS.Game.Enemy
 {
     public class TriggerObserver : MonoBehaviour
     {
+        #region Variables
+
+        [SerializeField] private CircleCollider2D _circleCollider2D;
+        private float _radiusGizmos;
+
+        #endregion
+        
         #region Ivents
         
         public event Action<Collider2D> OnEntered; 
@@ -12,6 +19,21 @@ namespace TDS.Game.Enemy
         
         #endregion
 
+
+        #region Unity Lifecycle
+
+        private void Awake()
+        {
+            _radiusGizmos = _circleCollider2D.radius;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, _radiusGizmos);
+        }
+
+        #endregion
 
         #region Private Methods
         
