@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using TDS.Game.Enemy;
 using UnityEngine;
 
 namespace TDS.Game.Objects
@@ -24,14 +26,28 @@ namespace TDS.Game.Objects
             StartCoroutine(LifeTimeTimer());
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag(Tags.Enemy))
+            {
+                EnemyHp enemyHp = other.gameObject.GetComponent<EnemyHp>();
+                enemyHp.ApplyDamage(1);
+            }
+        }
+
+        #endregion
+
+
+        #region Private Methods
+
         private IEnumerator LifeTimeTimer()
         {
             yield return new WaitForSeconds(_lifeTime);
             Destroy(gameObject);
         }
-        
 
         #endregion
+       
        
     }
 }

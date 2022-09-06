@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2866982451517961232}
   - component: {fileID: 8165455336217609076}
   - component: {fileID: -5072222483281569833}
+  - component: {fileID: 6759313664733545755}
   m_Layer: 6
   m_Name: PlayerBullet
   m_TagString: PlayerBullet
@@ -153,3 +154,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 25
   _lifeTime: 5
+--- !u!61 &6759313664733545755
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307840604466939773}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.030852616, y: 0.057297587}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.12731194, y: 0.7796242}
+  m_EdgeRadius: 0
