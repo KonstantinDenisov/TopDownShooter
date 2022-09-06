@@ -393,7 +393,9 @@ GameObject:
   - component: {fileID: 263375720}
   - component: {fileID: 263375719}
   - component: {fileID: 263375718}
-  m_Layer: 0
+  - component: {fileID: 263375722}
+  - component: {fileID: 263375723}
+  m_Layer: 10
   m_Name: ExplosionBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,8 +415,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  _radiusExplode: 1
-  _radiusGizmos: 1
+  _radiusExplode: 2
+  _radiusGizmos: 2
+  _explosiveAnimation: {fileID: 263375723}
 --- !u!95 &263375719
 Animator:
   serializedVersion: 4
@@ -502,6 +505,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &263375722
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263375717}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!114 &263375723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263375717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfdb1e9f80b497bb9faf618414421dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 263375719}
 --- !u!1 &368017954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,5 +1945,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7534650277579362729, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+      propertyPath: _circleCollider2D
+      value: 
+      objectReference: {fileID: 412215503}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 358da7e7d28249e429fe231f46506deb, type: 3}

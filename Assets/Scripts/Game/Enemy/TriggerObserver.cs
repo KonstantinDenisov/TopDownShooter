@@ -24,6 +24,7 @@ namespace TDS.Game.Enemy
 
         private void Awake()
         {
+            _circleCollider2D = FindObjectOfType<CircleCollider2D>();
             _radiusGizmos = _circleCollider2D.radius;
         }
 

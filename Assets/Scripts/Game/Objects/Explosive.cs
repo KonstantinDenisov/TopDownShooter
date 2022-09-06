@@ -10,6 +10,7 @@ namespace TDS.Game.Objects
         [SerializeField] private int _damage;
         [SerializeField] private float _radiusExplode;
         [SerializeField] private float _radiusGizmos;
+        [SerializeField] private ExplosiveAnimation _explosiveAnimation;
         
         #endregion
 
@@ -20,6 +21,12 @@ namespace TDS.Game.Objects
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, _radiusGizmos);
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            Explode();
+            _explosiveAnimation.PlayExplosive();
         }
 
         #endregion
