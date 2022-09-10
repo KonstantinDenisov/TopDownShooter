@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,7 +12,8 @@ namespace TDS.Game.Objects
         [SerializeField] private float _radiusExplode;
         [SerializeField] private float _radiusGizmos;
         [SerializeField] private ExplosiveAnimation _explosiveAnimation;
-        
+        private float _lifeTime = 1;
+
         #endregion
 
 
@@ -32,7 +34,7 @@ namespace TDS.Game.Objects
         #endregion
         private void Explode()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(Vector3.zero, _radiusExplode);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _radiusExplode);
 
             foreach (Collider2D col in colliders)
             {
@@ -42,6 +44,12 @@ namespace TDS.Game.Objects
                     health.ApplyDamage(_damage);
                 }
             }
+            StartCoroutine(LifeTimeTimer());
+        }
+        private IEnumerator LifeTimeTimer()
+        {
+            yield return new WaitForSeconds(_lifeTime);
+            Destroy(gameObject);
         }
         
     }

@@ -11,6 +11,7 @@ namespace TDS.Game.Player
         [SerializeField] private int _startHp;
         [SerializeField] private int _maxHp;
         public int CurrentHp { get; private set; }
+        [SerializeField] private int _checkCurrentHp;
         public int MaxHp => _maxHp;
 
         #endregion
@@ -29,6 +30,12 @@ namespace TDS.Game.Player
         {
             CurrentHp = _startHp;
             OnChanged?.Invoke(CurrentHp);
+            
+        }
+
+        private void Update()
+        {
+            _checkCurrentHp = CurrentHp;
         }
 
         #endregion
