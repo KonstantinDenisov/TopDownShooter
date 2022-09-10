@@ -825,6 +825,22 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &817116424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7534650276331701601, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+  m_PrefabInstance: {fileID: 7534650276159724976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6907ff34ce400f9337a876c45369c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &817116425 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7534650276331701602, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+  m_PrefabInstance: {fileID: 7534650276159724976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &954396714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,6 +1172,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1579889856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7534650276571870590, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+  m_PrefabInstance: {fileID: 7534650276159724976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6907ff34ce400f9337a876c45369c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1714920576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,6 +1597,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7534650276331701601, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+      propertyPath: _circleCollider2D
+      value: 
+      objectReference: {fileID: 817116425}
+    - target: {fileID: 7534650276571870588, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7534650276571870590, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
       propertyPath: _circleCollider2D
       value: 
@@ -1626,5 +1661,18 @@ PrefabInstance:
       propertyPath: _circleCollider2D
       value: 
       objectReference: {fileID: 412215503}
-    m_RemovedComponents: []
+    - target: {fileID: 7534650277579362730, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+      propertyPath: _triggerObserver
+      value: 
+      objectReference: {fileID: 1579889856}
+    - target: {fileID: 7534650277579362734, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+      propertyPath: _triggerObserver
+      value: 
+      objectReference: {fileID: 817116424}
+    - target: {fileID: 7534650278282326776, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7534650277579362729, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 358da7e7d28249e429fe231f46506deb, type: 3}

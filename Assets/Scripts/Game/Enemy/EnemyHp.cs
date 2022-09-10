@@ -10,6 +10,7 @@ namespace TDS.Game.Enemy
 
         [SerializeField] private int _startHp;
         [SerializeField] private int _maxHp;
+        [SerializeField] private int _checkCurrentHp;
 
         public event Action<int> OnChanged;
 
@@ -25,6 +26,11 @@ namespace TDS.Game.Enemy
         {
             CurrentHp = _startHp;
             OnChanged?.Invoke(CurrentHp);
+        }
+
+        private void Update()
+        {
+            _checkCurrentHp = CurrentHp;
         }
 
         #endregion

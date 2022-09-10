@@ -26,11 +26,11 @@ namespace TDS.Game.Objects
             StartCoroutine(LifeTimeTimer());
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            if (other.CompareTag(Tags.Enemy))
+            if (col.CompareTag(Tags.Enemy))
             {
-                EnemyHp enemyHp = other.gameObject.GetComponent<EnemyHp>();
+                EnemyHp enemyHp = col.gameObject.GetComponentInParent<EnemyHp>();
                 enemyHp.ApplyDamage(1);
             }
         }
