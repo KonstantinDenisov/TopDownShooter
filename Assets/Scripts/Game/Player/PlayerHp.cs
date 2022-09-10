@@ -30,7 +30,6 @@ namespace TDS.Game.Player
         {
             CurrentHp = _startHp;
             OnChanged?.Invoke(CurrentHp);
-            
         }
 
         private void Update()
