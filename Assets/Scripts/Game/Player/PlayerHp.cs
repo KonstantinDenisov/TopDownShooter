@@ -19,7 +19,7 @@ namespace TDS.Game.Player
 
         #region Ivents
 
-        public event Action<int> OnChanged;
+        public event Action<int> OnDecrementHp;
 
         #endregion
 
@@ -29,7 +29,7 @@ namespace TDS.Game.Player
         private void Awake()
         {
             CurrentHp = _startHp;
-            OnChanged?.Invoke(CurrentHp);
+            OnDecrementHp?.Invoke(CurrentHp);
         }
 
         private void Update()
@@ -45,13 +45,13 @@ namespace TDS.Game.Player
         public void ApplyDamage(int damage)
         {
             CurrentHp = Mathf.Max(0, CurrentHp - damage);
-            OnChanged?.Invoke(CurrentHp);
+            OnDecrementHp?.Invoke(CurrentHp);
         }
 
         public void ApplyHeal(int heal)
         {
             CurrentHp = Mathf.Min(_maxHp, CurrentHp + heal);
-            OnChanged?.Invoke(CurrentHp);
+            OnDecrementHp?.Invoke(CurrentHp);
         }
 
         #endregion

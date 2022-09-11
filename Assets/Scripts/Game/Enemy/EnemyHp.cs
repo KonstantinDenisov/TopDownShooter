@@ -12,7 +12,7 @@ namespace TDS.Game.Enemy
         [SerializeField] private int _maxHp;
         [SerializeField] private int _checkCurrentHp;
 
-        public event Action<int> OnChanged;
+        public event Action<int> OnDecrementHp;
 
         public int CurrentHp { get; private set; }
         public int MaxHp => _maxHp;
@@ -25,7 +25,7 @@ namespace TDS.Game.Enemy
         private void Awake()
         {
             CurrentHp = _startHp;
-            OnChanged?.Invoke(CurrentHp);
+            OnDecrementHp?.Invoke(CurrentHp);
         }
 
         private void Update()
@@ -41,13 +41,13 @@ namespace TDS.Game.Enemy
         public void ApplyDamage(int damage)
         {
             CurrentHp = Mathf.Max(0, CurrentHp - damage);
-            OnChanged?.Invoke(CurrentHp);
+            OnDecrementHp?.Invoke(CurrentHp);
         }
 
         public void ApplyHeal(int heal)
         {
             CurrentHp = Mathf.Min(_maxHp, CurrentHp + heal);
-            OnChanged?.Invoke(CurrentHp);
+            OnDecrementHp?.Invoke(CurrentHp);
         }
 
         #endregion

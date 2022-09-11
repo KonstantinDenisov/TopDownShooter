@@ -15,7 +15,7 @@ namespace TDS.Game.Objects
 
         #region Events
 
-        event Action<int> OnChanged;
+        event Action<int> OnDecrementHp;
 
         #endregion
 

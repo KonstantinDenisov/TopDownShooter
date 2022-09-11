@@ -13,7 +13,7 @@ namespace TDS.Game.Player
 
         private void Start()
         {
-            _playerHp.OnChanged += OnHpChanged;
+            _playerHp.OnDecrementHp += OnHpChanged;
         }
 
         private void OnHpChanged(int hp)
