@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using TDS.Game.PickUp;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -56,6 +57,7 @@ namespace TDS.Game.Enemy
             _enemyMovement.enabled = false;
             OnEnemyDead?.Invoke();
             SpawnItems();
+            LoadNextLevel();
         }
 
         private void SpawnItems()
@@ -93,9 +95,20 @@ namespace TDS.Game.Enemy
             PickUpBase initItem = _pickUpInfoArray[currentIndex].PickUpPrefab;
             
             Vector3 position = new Vector3(Random.Range(_firstCoordinateRange, _secondCoordinateRange),
-                Random.Range(_firstCoordinateRange, _secondCoordinateRange), Random.Range(_firstCoordinateRange, _secondCoordinateRange));
-            position.z = 0;
+                transform.position.y, transform.position.z);
             PickUpBase item = Instantiate(initItem, position, Quaternion.identity);
+        }
+
+        private void LoadNextLevel()
+        {
+            StartCoroutine(LoadNextLevelEnumerator());
+        }
+
+        IEnumerator LoadNextLevelEnumerator()
+        {
+            yield return new WaitForSeconds(1f);
+            //SceneLoader.Instance.LoadNextLevel();
+            LvlSwitcher.Instance.LoadLvl2();
         }
 
         #endregion
