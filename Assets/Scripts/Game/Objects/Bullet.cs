@@ -12,6 +12,7 @@ namespace TDS.Game.Objects
 
         [SerializeField] private float _speed;
         [SerializeField] private float _lifeTime;
+        [SerializeField] private int _damage;
         private Rigidbody2D _rb;
 
         #endregion
@@ -31,7 +32,7 @@ namespace TDS.Game.Objects
             if (col.CompareTag(Tags.Enemy))
             {
                 EnemyHp enemyHp = col.gameObject.GetComponentInParent<EnemyHp>();
-                enemyHp.ApplyDamage(1);
+                enemyHp.ApplyDamage(_damage);
             }
         }
 

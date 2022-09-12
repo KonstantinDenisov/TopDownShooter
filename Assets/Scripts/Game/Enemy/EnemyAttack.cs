@@ -8,7 +8,7 @@ namespace TDS.Game.Enemy
     {
         #region Variables
 
-        [SerializeField] private int _damage = 2;
+        [SerializeField] private int _damage = 1;
         [SerializeField] private float _attackDelay;
         [SerializeField] private Transform _attackPoint;
         [SerializeField] private LayerMask _layerMask;

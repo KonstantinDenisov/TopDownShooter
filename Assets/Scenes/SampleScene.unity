@@ -51432,8 +51432,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 817116424}
     - target: {fileID: 7534650277579362735, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7534650277579362735, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
       propertyPath: _radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7534650277579362735, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+      propertyPath: _attackDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7534650277579362735, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+      propertyPath: WatIsSolid.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7534650277579362735, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
+      propertyPath: _layerMask.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 7534650278282326776, guid: 358da7e7d28249e429fe231f46506deb, type: 3}
       propertyPath: m_TagString
