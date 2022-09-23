@@ -13,21 +13,12 @@ namespace TDS.Game.Enemy
         [SerializeField] private EnemyHp _enemyHp;
         [SerializeField] private EnemyMovement _enemyMovement;
         [SerializeField] private EnemyMeleeAnimation _enemyMeleeAnimation;
+        [SerializeField] private EnemyAttackAgro _enemyAttackAgro;
+        [SerializeField] private EnemyItemSpawner _enemyItemSpawner;
 
-        [SerializeField] private PickUpInfo[] _pickUpInfoArray;
-        [SerializeField] private float _pickUpSpawnChance;
-        [SerializeField] private float _firstCoordinateRange;
-        [SerializeField] private float _secondCoordinateRange;
-
-        #endregion
-
-
-        #region Events
-
-        public event Action OnEnemyDead;
+        private bool _isDeath;
 
         #endregion
-
 
         #region Unity Lifecicle
 
@@ -48,55 +39,17 @@ namespace TDS.Game.Enemy
 
         private void CheckDeath(int hp)
         {
-            if (hp > 0)
+            if (hp > 0 || _isDeath)
             {
                 return;
             }
-            
+
             _enemyMeleeAnimation.PlayDeath();
             _enemyMovement.enabled = false;
-            OnEnemyDead?.Invoke();
-            SpawnItems();
+            _enemyAttackAgro.enabled = false;
+            _enemyItemSpawner.SpawnItems();
             LoadNextLevel();
-        }
-
-        private void SpawnItems()
-        {
-            if (_pickUpInfoArray == null || _pickUpInfoArray.Length == 0)
-                return;
-
-            float random = Random.Range(0f, 1f);
-            if (random > _pickUpSpawnChance)
-                return;
-
-            int chanceSum = 0;
-
-            foreach (PickUpInfo itemInfo in _pickUpInfoArray)
-            {
-                chanceSum += itemInfo.SpawnChance;
-            }
-
-            int randomChance = Random.Range(0, chanceSum);
-            int currentChance = 0;
-            int currentIndex = 0;
-
-            for (int i = 0; i < _pickUpInfoArray.Length; i++)
-            {
-                PickUpInfo pickUpInfo = _pickUpInfoArray[i];
-                currentChance += pickUpInfo.SpawnChance;
-
-                if (currentChance >= randomChance)
-                {
-                    currentIndex = i;
-                    break;
-                }
-            }
-
-            PickUpBase initItem = _pickUpInfoArray[currentIndex].PickUpPrefab;
-            
-            Vector3 position = new Vector3(Random.Range(_firstCoordinateRange, _secondCoordinateRange),
-                transform.position.y, transform.position.z);
-            PickUpBase item = Instantiate(initItem, position, Quaternion.identity);
+            _isDeath = true;
         }
 
         private void LoadNextLevel()
