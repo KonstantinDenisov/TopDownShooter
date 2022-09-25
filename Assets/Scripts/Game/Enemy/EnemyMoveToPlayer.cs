@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TDS.Game.Enemy
 {
-    public class EnemyMoveToPlayer : MonoBehaviour
+    public class EnemyMoveToPlayer : EnemyFollow
     {
         #region Variables
 

@@ -20,5 +20,10 @@ namespace TDS.Game.Enemy
         {
             _animator.SetTrigger("EnemyDeath");
         }
+
+        public void PlayAttack()
+        {
+            
+        }
     }
 }

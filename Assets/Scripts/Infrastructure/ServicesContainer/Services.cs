@@ -6,23 +6,32 @@ namespace TDS.Infrastructure
 {
     public class Services
     {
+        #region Variables
+
         private const string Tag = nameof(Services);
 
         private readonly Dictionary<Type, IService> _services = new();
         private static Services _container;
 
+        #endregion
+
+
+        #region Properties
+
         public static Services Container => _container ??= new Services();
-        
+
+        #endregion
+
+
+        #region Public Methods
         public void Register<TService>(TService implementation) where TService : class, IService
         {
             Type key = typeof(TService);
 
             if (_services.ContainsKey(key))
             {
-                Debug.LogError($"{Tag}:{nameof(Register)}: Try add service with key '{key}', that already exist.");
                 return;
             }
-
             _services.Add(key, implementation);
         }
 
@@ -34,8 +43,7 @@ namespace TDS.Infrastructure
             {
                 return _services[key] as TService;
             }
-
-            Debug.LogError($"{Tag}:{nameof(Get)}: There is no service with key '{key}'.");
+            
             return default;
         }
 
@@ -44,12 +52,13 @@ namespace TDS.Infrastructure
             Type key = typeof(TService);
             if (!_services.ContainsKey(key))
             {
-                Debug.LogError(
-                    $"{Tag}:{nameof(UnRegister)}: Try remove service with key '{key}', that already removed.");
                 return;
             }
 
             _services.Remove(key);
         }
+
+        #endregion
+       
     }
 }

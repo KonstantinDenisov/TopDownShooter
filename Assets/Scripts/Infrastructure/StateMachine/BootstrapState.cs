@@ -5,6 +5,8 @@ namespace TDS.Infrastructure.StateMachine
 {
     public class BootstrapState : BaseState
     {
+        #region Public Methods
+
         public BootstrapState(IGameStateMachine gameStateMachine) : base(gameStateMachine)
         {
         }
@@ -22,6 +24,11 @@ namespace TDS.Infrastructure.StateMachine
         {
         }
 
+        #endregion
+
+
+        #region Private Methods
+
         private void OnSceneLoaded()
         {
             StateMachine.Enter<MenuState>();
@@ -31,5 +38,7 @@ namespace TDS.Infrastructure.StateMachine
         {
             Services.Container.Register<ISceneLoadService>(new SyncSceneLoadService());
         }
+
+        #endregion
     }
 }

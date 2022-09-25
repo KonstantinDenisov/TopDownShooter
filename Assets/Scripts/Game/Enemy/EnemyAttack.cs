@@ -74,6 +74,16 @@ namespace TDS.Game.Enemy
         }
 
         #endregion
-        
+
+
+        protected virtual void OnActiveUpdate()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected virtual void OnUpdate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

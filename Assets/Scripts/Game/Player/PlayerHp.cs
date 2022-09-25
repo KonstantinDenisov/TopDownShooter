@@ -13,6 +13,7 @@ namespace TDS.Game.Player
         public int CurrentHp { get; private set; }
         [SerializeField] private int _checkCurrentHp;
         public int MaxHp => _maxHp;
+        public event Action<int> OnChanged;
 
         #endregion
 

@@ -24,12 +24,12 @@ namespace TDS.Game.Enemy
 
         private void OnEnable()
         {
-            _enemyHp.OnDecrementHp += CheckDeath;
+            _enemyHp.OnChanged += CheckDeath;
         }
 
         private void OnDisable()
         {
-            _enemyHp.OnDecrementHp -= CheckDeath;
+            _enemyHp.OnChanged -= CheckDeath;
         }
 
         #endregion

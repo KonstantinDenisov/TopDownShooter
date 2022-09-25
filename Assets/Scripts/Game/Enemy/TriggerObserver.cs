@@ -12,9 +12,10 @@ namespace TDS.Game.Enemy
 
         #endregion
         
-        #region Ivents
+        #region Events
         
         public event Action<Collider2D> OnEntered; 
+        public event Action<Collider2D> OnStayed;
         public event Action<Collider2D> OnExited; 
         
         #endregion
@@ -39,6 +40,8 @@ namespace TDS.Game.Enemy
             OnExited?.Invoke(other);
         
         #endregion
+
+
         
     }
 }
