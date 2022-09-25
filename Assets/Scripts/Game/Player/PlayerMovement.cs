@@ -48,11 +48,12 @@ namespace TDS.Game.Player
 
         private void Move()
         {
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
-
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
+            
             Vector2 direction = new Vector2(horizontal, vertical);
             Vector3 moveDelta = direction * _speed;
+            _rb.velocity = moveDelta;
             
             _playerAnimation.SetSpeed(direction.magnitude);
         }
