@@ -13,7 +13,6 @@ namespace TDS.Infrastructure.StateMachine
 
         public override void Enter()
         {
-            // TODO: Show loading screen
             ISceneLoadService sceneLoadService = Services.Container.Get<ISceneLoadService>();
             sceneLoadService.Load("GameScene", OnSceneLoaded);
         }
@@ -30,11 +29,7 @@ namespace TDS.Infrastructure.StateMachine
 
         private void OnSceneLoaded()
         {
-            // TODO: Init all local services
             RegisterLocalServices();
-            
-            
-            // TODO: Hide loading screen
         }
 
         private void RegisterLocalServices()

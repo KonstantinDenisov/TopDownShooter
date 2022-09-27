@@ -7,11 +7,8 @@ namespace TDS.Infrastructure
     {
         private void Start()
         {
-            Debug.Log($"Start In GameBootstrapper");
-
             GameStateMachine gameStateMachine = new GameStateMachine();
             Services.Container.Register<IGameStateMachine>(gameStateMachine);
-            
             gameStateMachine.Enter<BootstrapState>();
         }
     }

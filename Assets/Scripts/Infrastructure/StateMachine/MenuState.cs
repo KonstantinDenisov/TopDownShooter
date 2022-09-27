@@ -10,12 +10,10 @@ namespace TDS.Infrastructure.StateMachine
 
         public override void Enter()
         {
-            Debug.Log($"In MenuState");
         }
 
         public override void Exit()
         {
-            
         }
     }
 }

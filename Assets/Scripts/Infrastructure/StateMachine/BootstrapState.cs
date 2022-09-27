@@ -13,8 +13,6 @@ namespace TDS.Infrastructure.StateMachine
 
         public override void Enter()
         {
-            Debug.Log($"In BootstrapState");
-
             RegisterAllGlobalServices();
             ISceneLoadService sceneLoadService = Services.Container.Get<ISceneLoadService>();
             sceneLoadService.Load("MenuScene", OnSceneLoaded);

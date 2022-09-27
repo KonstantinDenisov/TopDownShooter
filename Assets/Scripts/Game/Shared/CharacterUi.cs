@@ -19,7 +19,7 @@ namespace TDS.Game
 
         private void Awake()
         {
-            Construct(GetComponentInChildren<IHealth>());
+            Construct(GetComponent<IHealth>());
         }
 
         private void OnDestroy()
