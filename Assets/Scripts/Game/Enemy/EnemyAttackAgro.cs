@@ -5,55 +5,27 @@ namespace TDS.Game.Enemy
 {
     public class EnemyAttackAgro : MonoBehaviour
     {
-        #region Variables
-
         [SerializeField] private TriggerObserver _triggerObserver;
         [SerializeField] private EnemyAttack _attack;
-        [SerializeField] private EnemyMovement _enemyMovement;
+        [SerializeField] private EnemyFollow _follow;
 
-        private bool _isInRange;
-
-        #endregion
-
-
-        #region Unity Lifecycle
-
-        private void OnEnable()
+        private void Start()
         {
             _triggerObserver.OnEntered += OnEntered;
             _triggerObserver.OnExited += OnExited;
         }
 
-        private void Update()
-        {
-            if (_isInRange)
-                _attack.Attack();
-        }
-
-        private void OnDisable()
-        {
-            _triggerObserver.OnEntered -= OnEntered;
-            _triggerObserver.OnExited -= OnExited;
-        }
-
-        #endregion
-
-
-        #region Private Methods
-
         private void OnEntered(Collider2D col)
         {
-            _isInRange = true;
-            _enemyMovement.enabled = true;
+            _follow.Deactivate();
+            _attack.Activate();
         }
 
         private void OnExited(Collider2D col)
         {
-            _isInRange = false;
-            _enemyMovement.enabled = true;
+            _attack.Deactivate();
+            _follow.Activate();
         }
-
-        #endregion
        
     }
 }

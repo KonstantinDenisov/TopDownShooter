@@ -6,24 +6,25 @@ namespace TDS.Game.Enemy
     {
         [SerializeField] private Animator _animator;
 
-        public void PlayShoot()
+        public void PlayAttack()
         {
-            _animator.SetTrigger("EnemyShoot");
+            _animator.SetTrigger("AttackEnemyMelee");
         }
 
         public void SetSpeed(float speed)
         {
-            _animator.SetFloat("EnemySpeed", speed);
+            _animator.SetFloat("SpeedEnemyMelee", speed);
         }
 
         public void PlayDeath()
         {
-            _animator.SetTrigger("EnemyDeath");
+            _animator.SetTrigger("DeathEnemyMelee");
         }
-
-        public void PlayAttack()
+        
+        public void StopAttack()
         {
-            
+            _animator.SetTrigger("StopAttackEnemyMelee");
         }
+        
     }
 }

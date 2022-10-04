@@ -6,8 +6,7 @@ namespace TDS.Game.Enemy
     public class EnemyMeleeAttack : EnemyAttack
     {
         [SerializeField] private EnemyAnimation _animation;
-
-        [SerializeField] private int _damage = 2;
+        [SerializeField] private int _damage;
         [SerializeField] private float _attackDelay;
         [SerializeField] private Transform _attackPoint;
         [SerializeField] private float _radius;
